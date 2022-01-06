@@ -1,0 +1,39 @@
+sub main() {
+    arr<u8> nums = arr<u8>:new_with_len(4);
+    nums[0] = 3;
+    nums[1] = 2;
+    nums[2] = 2;
+    nums[3] = 3;
+
+    u8 val = 3;
+
+    u8 k = remove_element(nums, val);
+    fmt:print("k:%i\n", k);
+    
+    for i = 0, i < k, i += 1 {
+      fmt:print("%i\n", nums[i]);
+    };
+};
+
+u8 remove_element(arr<u8> nums, u8 val) {
+    u8 i = 0;
+    u8 j = nums.len;
+    while true {
+        u8 k = j;
+
+        if i == k {
+            ret k;
+        };
+
+        if nums[i] == val {
+            j -= 1;
+            u8 swp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = swp;
+        } else {
+            i += 1;
+        };
+    }
+};
+
+#bind("printf") sub fmt:print ();
