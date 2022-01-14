@@ -1,0 +1,28 @@
+#!/usr/bin/env crystal
+# SEE: https://leetcode.com/problems/longest-common-prefix/ <>
+# ..............................................................................
+def longest_common_prefix(strs)
+  i = 0
+  c = strs[0][0]
+  loop do
+    i += 1
+    break if i == strs.size 
+    return "" if c != strs[i][0]
+  end
+ 
+  j = 1
+  loop do
+    i = 0
+    c = strs[0][j]
+    return strs[0][...j] if c.nil?
+    loop do
+      i += 1
+      break if i == strs.size
+      return strs[0][...j] if c != strs[i][j]
+    end
+    j += 1
+  end
+end
+# ..............................................................................
+p! longest_common_prefix ["flower","flow","flight"]
+p! longest_common_prefix ["dog","racecar","car"]
