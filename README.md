@@ -1,6 +1,6 @@
 # Weird LeetCode
 
-Competitive programming solutions that are strange somehow.
+Programming solutions that are strange somehow.
 
 ### Link Index
 - LeetCode:
