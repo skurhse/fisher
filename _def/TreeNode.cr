@@ -1,6 +1,7 @@
 #!/usr/bin/env crystal
+
 # REQ: Defines the TreeNode class for tree problems. <skr 2022-01-04>
-# ..............................................................................
+
 class TreeNode
   property value : Int32?
   property left : TreeNode?
