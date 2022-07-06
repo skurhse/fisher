@@ -9,7 +9,7 @@ Programming solutions that are strange somehow.
 - Crystal 🔮
   - https://github.com/crystal-lang/crystal#crystal
   - https://crystal-lang.org/
-- Go
+- Go 🦫
   - https://github.com/golang/go#the-go-programming-language
   - https://go.dev/
  
