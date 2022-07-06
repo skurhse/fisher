@@ -1,6 +1,6 @@
 # Weird LeetCode
 
-Programming solutions that are strange somehow.
+Programming solutions that are strange... somehow.
 
 ### Language Index
 - Cup ☕
