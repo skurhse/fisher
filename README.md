@@ -1,4 +1,8 @@
-Links to get started:
+# Weird LeetCode
+
+Competitive programming solutions from a range sources.
+
+### Link Index
 - LeetCode:
   - https://leetcode.com/problemset/all/
 - Cup ☕
