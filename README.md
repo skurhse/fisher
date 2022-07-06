@@ -4,7 +4,7 @@ Programming solutions that are strange... somehow.
 
 ### Language Index
 - Cup ☕
-  - https://github.com/cup-lang
+  - https://github.com/cup-lang/cup#cup-language
   - https://cup-lang.org/ 
 - Crystal 🔮
   - https://github.com/crystal-lang/crystal#crystal
