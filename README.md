@@ -1,6 +1,6 @@
 # Weird LeetCode
 
-Competitive programming solutions from a range sources.
+Competitive programming solutions that are strange somehow.
 
 ### Link Index
 - LeetCode:
