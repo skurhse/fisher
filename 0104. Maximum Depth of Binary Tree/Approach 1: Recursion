@@ -1,7 +1,8 @@
 #!/usr/bin/env crystal
-# SEE: https://leetcode.com/problems/maximum-depth-of-binary-tree/ <>
-# ..............................................................................
-require "../_def/TreeNode.cr"
+
+# SEE: https://leetcode.com/problems/maximum-depth-of-binary-tree/ <skr>
+
+require "../_def/crystal/TreeNode.cr"
 
 def max_depth(root)
   return root.nil? ? 0 : _max_depth(root, 1)
