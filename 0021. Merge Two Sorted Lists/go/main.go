@@ -1,14 +1,21 @@
 package main
 
-import "fmt"
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import (
+	. "linkedlist"
+)
 
 func main() {
-	fmt.Println("Hello, world.")
+
+	lists := [3][2][]int{
+		{{1, 2, 3, 4}, {1, 2, 3, 4}},
+		{{}, {}},
+		{{}, {0}},
+	}
+
+	for _, v := range lists {
+		mergedList := mergeTwoLists(NewList(v[0]), NewList(v[1]))
+		PrintList(mergedList)
+	}
 }
 
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
