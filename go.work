@@ -1,3 +1,3 @@
 go 1.18
 
-use ./_def/go/linkedlist
+use ./lib/go/linkedlist

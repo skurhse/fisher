@@ -2,7 +2,7 @@
 
 # SEE: https://leetcode.com/problems/maximum-depth-of-binary-tree/ <skr>
 
-require "../_def/crystal/TreeNode.cr"
+require "../lib/crystal/TreeNode.cr"
 
 def max_depth(root)
   return root.nil? ? 0 : _max_depth(root, 1)

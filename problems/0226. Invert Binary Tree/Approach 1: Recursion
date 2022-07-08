@@ -1,7 +1,7 @@
 #!/usr/bin/env crystal
 # SEE: https://leetcode.com/problems/invert-binary-tree/ <>
 # .............................................................................. 
-require "../_def/TreeNode.cr"
+require "../lib/TreeNode.cr"
 
 def invert_tree(root)
   root.left, root.right = invert_tree(root.right), invert_tree(root.left) if root
