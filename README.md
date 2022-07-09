@@ -1,4 +1,4 @@
-# Weird LeetCode
+# Weird Code
 
 Programming solutions that are strange... somehow.
 
