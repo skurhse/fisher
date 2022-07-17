@@ -1,5 +1,4 @@
-# Weird Code
-
+# Weird
 Programming solutions that are strange... somehow.
 
 ### Language Index
