@@ -1,7 +1,6 @@
 # Weird
 Solutions that are strange somehow.
 
-### Language Index
 - Cup ☕
   - https://github.com/cup-lang/cup#cup-language
   - https://cup-lang.org/ 
