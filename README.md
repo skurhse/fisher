@@ -1,5 +1,5 @@
 # Weird
-Programming solutions that are strange somehow.
+Solutions that are strange somehow.
 
 ### Language Index
 - Cup ☕
