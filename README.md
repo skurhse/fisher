@@ -1,5 +1,5 @@
-# *Weird...*
-Solutions? Strange somehow.
+# Weird...
+*Solutions*?? Strange, somehow.
 
 - ☕ Cup
   - https://github.com/cup-lang/cup#cup-language
@@ -11,4 +11,5 @@ Solutions? Strange somehow.
   - https://github.com/golang/go#the-go-programming-language
   - https://go.dev/
 - 💎 Ruby
-  - 
+  - https://git.ruby-lang.org/ruby.git
+  - https://www.ruby-lang.org/en/
