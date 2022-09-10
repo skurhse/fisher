@@ -1,5 +1,5 @@
 # *Weird...*
-Solutions? strange somehow.
+Solutions? Strange somehow.
 
 - Cup ☕
   - https://github.com/cup-lang/cup#cup-language
