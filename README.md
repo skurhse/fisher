@@ -1,4 +1,4 @@
-# Weird
+# *Weird*
 Solutions? strange somehow.
 
 - Cup ☕
