@@ -1,6 +1,8 @@
-# Weird LeetCode...
-*Solutions thar are strange, somehow.*
+# Weird LeetCode
 
+For a list of targets, run `make help`.
+
+## Language Index
 - 🔮 Crystal
   - https://github.com/crystal-lang/crystal#crystal
   - https://crystal-lang.org/
