@@ -1,5 +1,4 @@
-# Weird LeetCode
-
+# Competitive Programming
 For a list of targets, run `make help`.
 
 ## Language Index
