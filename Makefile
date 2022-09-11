@@ -2,13 +2,7 @@
 
 SHELL = /usr/bin/env bash
 
-ifneq ($(TRACE),yes)
-Q = @
-endif
-
-APPROACHES := $(wildcard src/*/*)
-
-.PHONY: all help $(APPROACHES)
+.PHONY: help test
 
 help: BD := $(shell tput bold)
 help: BL := $(shell tput setaf 4)
@@ -17,13 +11,11 @@ help: RS := $(shell tput sgr0)
 
 help: HELP = '\n\
 $(BD)weird targets:$(RS)\n\
-  $(CY)all$(RS)   - $(BL)Run all appoaches$(RS)\n\
+  $(CY)test$(RS)   - $(BL)Test all appoaches$(RS)\n\
 \n'
 
 help:
 	$(Q)printf $(HELP)
 
-all: $(APPROACHES)
-
-$(APPROACHES):
-	"$@"
+test:
+	go test -v ./...
