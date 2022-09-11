@@ -1,9 +1,6 @@
-# Weird...
-*Solutions*?? Strange, somehow.
+# Weird LeetCode...
+*Solutions thar are strange, somehow.*
 
-- ☕ Cup
-  - https://github.com/cup-lang/cup#cup-language
-  - https://cup-lang.org/
 - 🔮 Crystal
   - https://github.com/crystal-lang/crystal#crystal
   - https://crystal-lang.org/
