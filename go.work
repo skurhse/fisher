@@ -1,3 +1,3 @@
-go 1.18
+go 1.20
 
-use ./lib/go/linkedlist
+use src/_lib/go/linkedlist
