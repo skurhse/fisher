@@ -1,5 +1,5 @@
 # Chrestomathy
-Competitive programming solutions in many languages.
+Competitive programming solutions.
 
 ## Language Index
 - 🔮 Crystal
