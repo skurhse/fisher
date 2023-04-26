@@ -1,7 +1,4 @@
-# Chrestomathy
-Competitive programming solutions.
-
-## Language Index
+# Language Index
 - 🔮 Crystal
   - https://github.com/crystal-lang/crystal#crystal
   - https://crystal-lang.org/
