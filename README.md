@@ -1,5 +1,5 @@
 # Chrestomathy
-For a list of targets, run `make help`.
+Competitive programming solutions in many languages.
 
 ## Language Index
 - 🔮 Crystal
