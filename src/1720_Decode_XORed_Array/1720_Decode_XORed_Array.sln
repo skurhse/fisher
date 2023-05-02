@@ -1,0 +1,34 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xor.Tests", "Xor.Tests\Xor.Tests.csproj", "{D3B2F390-9009-4AAE-B4E0-27899ABE8B26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xor", "Xor\Xor.csproj", "{D70499B2-AF6A-411F-BC63-B149A20B6390}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xor.Benchmarks", "Xor.Benchmarks\Xor.Benchmarks.csproj", "{9BFCB151-6903-4246-889D-1CF68D2BE4AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3B2F390-9009-4AAE-B4E0-27899ABE8B26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B2F390-9009-4AAE-B4E0-27899ABE8B26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B2F390-9009-4AAE-B4E0-27899ABE8B26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B2F390-9009-4AAE-B4E0-27899ABE8B26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70499B2-AF6A-411F-BC63-B149A20B6390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70499B2-AF6A-411F-BC63-B149A20B6390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70499B2-AF6A-411F-BC63-B149A20B6390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70499B2-AF6A-411F-BC63-B149A20B6390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BFCB151-6903-4246-889D-1CF68D2BE4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BFCB151-6903-4246-889D-1CF68D2BE4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BFCB151-6903-4246-889D-1CF68D2BE4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BFCB151-6903-4246-889D-1CF68D2BE4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
