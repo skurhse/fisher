@@ -28,5 +28,5 @@ public class DecodeBenchmark
     public int[] DecodeWithSpans() => Xor.DecodeWithSpans(encoded, 1);
 
     [Benchmark]
-    public int[] DecodeWithCopyAndSpan() => Xor.DecodeWithCopyAndSpan(encoded, 1);
+    public int[] DecodeWithSpansWithoutHoist() => Xor.DecodeWithSpansWithoutHoist(encoded, 1);
 }

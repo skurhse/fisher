@@ -30,17 +30,16 @@ public static class Xor
         return arr;
     }
 
-    public static int[] DecodeWithCopyAndSpan(int[] encoded, int first)
+    public static int[] DecodeWithSpansWithoutHoist(int[] encoded, int first)
     {
-        var intSize = sizeof(int);
         var arr = new int[encoded.Length + 1];
         arr[0] = first;
-        System.Buffer.BlockCopy(encoded, 0, arr, intSize, intSize * encoded.Length);
-        
-        var arrSpan = arr.AsSpan(1);
-        for (int i = 0; i < arrSpan.Length; i++)
+
+        var encodedSpan = encoded.AsSpan();
+        var arrSpan = arr.AsSpan();
+        for (int i = 1; i < arrSpan.Length; i++)
         {
-            arr[i+1] ^= arr[i];
+            arrSpan[i] = encodedSpan[i-1] ^ arrSpan[i - 1];
         }
 
         return arr;

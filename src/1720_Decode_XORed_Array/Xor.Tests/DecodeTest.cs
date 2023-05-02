@@ -9,6 +9,6 @@ public class DecodeTest
     {
         Assert.Equal(Xor.Decode(encoded, first), expected);
         Assert.Equal(Xor.DecodeWithSpans(encoded, first), expected);
-        Assert.Equal(Xor.DecodeWithCopyAndSpan(encoded, first), expected);
+        Assert.Equal(Xor.DecodeWithSpansWithoutHoist(encoded, first), expected);
     }
 }
