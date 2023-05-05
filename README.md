@@ -1,5 +1,5 @@
 # Language Index
-- C#
+- 🤖 C#
   - https://github.com/dotnet/csharplang
   - https://learn.microsoft.com/en-us/dotnet/csharp/
 - 🔮 Crystal
