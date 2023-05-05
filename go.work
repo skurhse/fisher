@@ -1,5 +1,0 @@
-go 1.20
-
-use src/_lib/go/linkedlist
-use src/0704_Binary_Search
-use src/1275_Tic_Tac_Toe_Board_State
