@@ -9,4 +9,4 @@ Selected go passages to aid the language learner.
 ### Learning Resources
 
 - [A Tour of Go](https://go.dev/tour/list)
-- [Go by Example](https://gobyexample.com/)=
+- [Go by Example](https://gobyexample.com/)
