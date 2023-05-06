@@ -5,6 +5,7 @@ Selected passages to aid the language learner.
 ### Go Language Resources
 - [Documentation](https://go.dev/doc/)
 - [Source](https://github.com/golang/go#the-go-programming-language)
+- [Blog](https://go.dev/blog/)
 
 ### Go Learning Resources
 
