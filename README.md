@@ -1,13 +1,12 @@
-# Language Index
-- 🤖 C#
-  - https://github.com/dotnet/csharplang
-  - https://learn.microsoft.com/en-us/dotnet/csharp/
-- 🔮 Crystal
-  - https://github.com/crystal-lang/crystal#crystal
-  - https://crystal-lang.org/
-- 🦫 Go
-  - https://github.com/golang/go#the-go-programming-language
-  - https://go.dev/
-- 💎 Ruby
-  - https://git.ruby-lang.org/ruby.git
-  - https://www.ruby-lang.org/en/
+# gresto 🍝
+
+Selected go passages to aid the language learner.
+
+### Language Resources
+- [Documentation](https://go.dev/doc/)
+- [Source](https://github.com/golang/go#the-go-programming-language)
+
+### Learning Resources
+
+- [A Tour of Go](https://go.dev/tour/list)
+- [Go by Example](https://gobyexample.com/)=
