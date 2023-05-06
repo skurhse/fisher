@@ -1,6 +1,6 @@
-package binsearch
+package binsrch
 
-func search(nums []int, target int) int {
+func Search(nums []int, target int) int {
 	var find func(int, int) int
 	find = func(l int, u int) int {
 
