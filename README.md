@@ -10,3 +10,4 @@ Selected passages to aid the language learner.
 
 - [A Tour of Go](https://go.dev/tour/list)
 - [Go by Example](https://gobyexample.com/)
+- [Excercism Go Track](https://exercism.org/tracks/go)
