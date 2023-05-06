@@ -1,10 +1,4 @@
-package main
-
-import (
-	"fmt"
-	"strconv"
-	"strings"
-)
+package fibnum
 
 const (
 	FibFirst  = 0
@@ -13,19 +7,7 @@ const (
 
 const MaxN = 30
 
-func main() {
-	fibs := [MaxN]string{}
-
-	for i := 0; i < MaxN; i++ {
-		fibs[i] = strconv.Itoa(fib(i))
-	}
-	fibStr := strings.Join(fibs[:], ", ")
-
-	fmt.Printf("Fibonacci sequence for %d numbers:\n", MaxN)
-	fmt.Println(fibStr)
-}
-
-func fib(n int) int {
+func Fib(n int) int {
 	switch n {
 	case 0:
 		return FibFirst
