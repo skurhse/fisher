@@ -1,6 +1,6 @@
 # gresto 🍝
 
-Selected go passages to aid the language learner.
+Selected passages to aid the language learner.
 
 ### Language Resources
 - [Documentation](https://go.dev/doc/)
