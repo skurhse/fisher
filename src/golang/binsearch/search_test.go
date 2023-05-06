@@ -1,4 +1,4 @@
-package search
+package binsearch
 
 import (
 	"fmt"

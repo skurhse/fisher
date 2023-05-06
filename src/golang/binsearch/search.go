@@ -1,4 +1,4 @@
-package search
+package binsearch
 
 func search(nums []int, target int) int {
 	var find func(int, int) int
