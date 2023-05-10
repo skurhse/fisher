@@ -1,0 +1,6 @@
+go 1.20
+
+use src/binsrch
+use src/fibnum
+use src/lstmrg
+use src/lrucache
