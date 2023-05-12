@@ -8,18 +8,16 @@ func MakePrimes(lower int, upper int) []int {
 		lower = 2
 	}
 
-	primes := make([]int, 0)
-
+	primes := []int{}
 	composites := make(map[int]bool, lower-upper)
 
-	var i int
-	for i = 2; i*i < upper; i++ {
+	for i := 2; i*i < upper; i++ {
 		if composites[i] {
 			continue
 		}
-		for multiple := i + i; multiple < upper; multiple += i {
-			if multiple >= lower {
-				composites[multiple] = true
+		for m := i + i; m < upper; m += i {
+			if m >= lower {
+				composites[m] = true
 			}
 		}
 	}
