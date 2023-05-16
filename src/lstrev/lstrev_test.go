@@ -15,26 +15,21 @@ type assert struct {
 
 func TestReverseLists(t *testing.T) {
 	var data = []assert{
-		{[]int{1, 2, 3, 4, 5}, []int{5, 4, 3, 2, 1}},
-		{[]int{1, 2}, []int{2, 1}},
+		{[]int{1, 2, 3}, []int{3, 2, 1}},
+		{[]int{1}, []int{1}},
 		{[]int{}, []int{}},
 	}
 
 	funcs := []func(*ListNode) *ListNode{ReverseListRec, ReverseListItr}
 
-	for _, datum := range data {
+	for _, dtm := range data {
 		for _, fnc := range funcs {
-
-			input := NewList(datum.input)
-			want := NewList(datum.want)
+			input, want := NewList(dtm.input), NewList(dtm.want)
 
 			if got := fnc(input); !reflect.DeepEqual(got, want) {
-				t.Errorf("%s(%v) = %v, want %v", GetFunctionName(fnc), input.ToSlice(), got.ToSlice(), want.ToSlice())
+				fname := runtime.FuncForPC(reflect.ValueOf(fnc).Pointer()).Name()
+				t.Errorf("%s(%v) = %v, want %v", fname, input.ToSlice(), got.ToSlice(), want.ToSlice())
 			}
 		}
 	}
-}
-
-func GetFunctionName(i interface{}) string {
-	return runtime.FuncForPC(reflect.ValueOf(i).Pointer()).Name()
 }
