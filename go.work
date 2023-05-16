@@ -4,4 +4,5 @@ use src/binsrch
 use src/esieve
 use src/fibnum
 use src/lstmrg
+use src/lstrev
 use src/lrucache
