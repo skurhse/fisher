@@ -31,3 +31,5 @@ Example Three:
 Input: head = []
 Output: []
 ```
+
+Hint: Both recursive and iterative solutions exist.
