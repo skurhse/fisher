@@ -6,7 +6,7 @@ In a *singly* linked list, each node contains a data value and a 'next' referenc
 
 **Challenge**
 
-Consider the following class definition, exemplified here in python:
+Consider the following class definition:
 ```python
 # Definition for singly-linked list.
 class ListNode:
