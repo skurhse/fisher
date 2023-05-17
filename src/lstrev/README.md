@@ -32,4 +32,4 @@ Input: head = []
 Output: []
 ```
 
-Hint: Both recursive and iterative solutions exist.
+Both recursive and iterative solutions exist. Which one is faster?
