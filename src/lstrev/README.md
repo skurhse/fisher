@@ -4,6 +4,8 @@ In computer science, a linked list is a linear collection of data elements whose
 
 In a *singly* linked list, each node contains a data value and a 'next' reference. This structure allows for removal of (or insertions around) known elements in constant or O(1) time. A drawback of linked lists however, is that raw access requires iteration which is done in linear or O(N) time.
 
+In general, more memory is required to store a linked list than is required for an array.
+
 **Challenge**
 
 Consider the following class definition, exemplified here in python:
