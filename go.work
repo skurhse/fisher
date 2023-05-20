@@ -6,3 +6,4 @@ use src/fibnum
 use src/lstmrg
 use src/lstrev
 use src/lrucache
+use src/mndlbrot
