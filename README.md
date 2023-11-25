@@ -1,4 +1,4 @@
-# gresto 🍝
+# 🍝 gresto
 
 Selected passages to aid the language learner.
 
