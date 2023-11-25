@@ -2,7 +2,15 @@
 
 Selected passages to aid the language learner.
 
-### Go Language Resources
+### Passages
+
+- [Binary Search](binsrch/)
+- [Sieve of Eratosthenes](esieve/)
+- [Fibonacci Sequence](fibnum/)
+- [Least Recently Used (LRU) Cache](lrucache/)
+- [Reverse Linked List](lstrev/)
+
+### Language Resources
 - [Documentation](https://go.dev/doc/)
 - [Source](https://github.com/golang/go#the-go-programming-language)
 - [Blog](https://go.dev/blog/)
