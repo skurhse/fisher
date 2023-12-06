@@ -1,3 +1,3 @@
 module github.com/skurhse/gresto/lstrev
 
-go 1.20
+go 1.21
