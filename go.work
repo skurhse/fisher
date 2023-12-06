@@ -1,8 +1,13 @@
-go 1.21
+go 1.21.5
 
 use src/binsrch
+
 use src/esieve
+
 use src/fibnum
+
 use src/lstrev
+
 use src/lrucache
+
 use src/mndlbrot
