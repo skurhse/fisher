@@ -9,6 +9,7 @@ Selected passages to aid the language learner.
 - [Fibonacci Sequence](fibnum/)
 - [Least Recently Used (LRU) Cache](lrucache/)
 - [Reverse Linked List](lstrev/)
+- [Mandelbrot Set](mndlbrot/)
 
 ### Language Resources
 - [Documentation](https://go.dev/doc/)
