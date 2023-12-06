@@ -2,14 +2,14 @@
 
 Selected passages to aid the language learner.
 
-### Passages
+### Contents
 
-- [Binary Search](binsrch/)
-- [Sieve of Eratosthenes](esieve/)
-- [Fibonacci Sequence](fibnum/)
-- [Least Recently Used (LRU) Cache](lrucache/)
-- [Reverse Linked List](lstrev/)
-- [Mandelbrot Set](mndlbrot/)
+- [Binary Search](src/binsrch/)
+- [Sieve of Eratosthenes](src/esieve/)
+- [Fibonacci Sequence](src/fibnum/)
+- [Least Recently Used (LRU) Cache](src/lrucache/)
+- [Reverse Linked List](src/lstrev/)
+- [Mandelbrot Set](src/mndlbrot/)
 
 ### Language Resources
 - [Documentation](https://go.dev/doc/)
