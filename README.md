@@ -1,6 +1,6 @@
 # 🍝 gresto
 
-Selected passages to aid the language learner.
+Passages to aid the golang learner.
 
 ### Contents
 
