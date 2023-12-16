@@ -1,6 +1,6 @@
 # 🍝 gresto
 
-Passages to aid the golang learner.
+A [chrestomathy](https://en.wiktionary.org/wiki/chrestomathy) for go 1.21
 
 ### Contents
 
