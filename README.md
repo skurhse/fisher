@@ -10,7 +10,7 @@
 - [Reverse Linked List](src/lstrev/)
 - [Mandelbrot Set](src/mndlbrot/)
 
-###Language Resources
+### Language Resources
 - [Documentation](https://go.dev/doc/)
 - [Source](https://github.com/golang/go#the-go-programming-language)
 - [Blog](https://go.dev/blog/)
