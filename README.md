@@ -1,6 +1,5 @@
 # 🍝 gresto
-
-A [chrestomathy](https://en.wiktionary.org/wiki/chrestomathy) for go 1.21
+ a [chrestomathy](https://en.wiktionary.org/wiki/chrestomathy) for [go](https://go.dev/) programming language.
 
 ### Contents
 
