@@ -10,7 +10,7 @@
 - [Reverse Linked List](src/lstrev/)
 - [Mandelbrot Set](src/mndlbrot/)
 
-### Official Language Resources
+###Language Resources
 - [Documentation](https://go.dev/doc/)
 - [Source](https://github.com/golang/go#the-go-programming-language)
 - [Blog](https://go.dev/blog/)
@@ -18,7 +18,7 @@
 - [How to Write Go Code](https://go.dev/doc/code)
 - [Effective Go](https://go.dev/doc/effective_go)
 
-### Independent Learning Resources
+### Learning Resources
 - [Go by Example](https://gobyexample.com/)
 - [Go Track (Exercism)](https://exercism.org/tracks/go)
 - [Go First Steps (Microsoft Training Path)](https://learn.microsoft.com/en-us/training/paths/go-first-steps/)
