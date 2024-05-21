@@ -1,4 +1,4 @@
-# LRU Cache
+# Least Recently Used (LRU) Cache
 
 In computing, a *cache* is a component that stores data so that future requests for that data can be served faster.
 
