@@ -1,3 +1,3 @@
-module github.com/skurhse/chrestomathy/src/lru_cache
+module github.com/skurhse/gresto/lrucache
 
 go 1.21

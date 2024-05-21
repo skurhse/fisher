@@ -1,3 +1,3 @@
-module github.com/skurhse/chrestomathy/fibnum
+module github.com/skurhse/gresto/fibnum
 
 go 1.21
