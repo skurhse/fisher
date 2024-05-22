@@ -1,5 +1,5 @@
 # 🍝 gresto
- a [chrestomathy](https://en.wiktionary.org/wiki/chrestomathy) for the go programming language, designed for version [1.22.3](https://go.dev/dl/).
+ a [chrestomathy](https://en.wiktionary.org/wiki/chrestomathy) for the go programming language, designed for version [1.22](https://go.dev/dl/).
 
 ### Table of Contents
 
