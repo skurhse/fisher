@@ -12,5 +12,3 @@ The algorithm works to calculate primes by iteratively marking as composite (i.e
 *Euler's sieve* is a version of the sieve of Eratosthenes in which each composite number is eliminated exactly once. It, too, starts with a list of numbers from 2 to n in order.
 
 On each step the first element is identified as the next prime. This prime is multiplied with each element of the list, including itself, and the results are marked in the list for subsequent deletion. The initial element and the marked elements are then removed from the working sequence, and the process is repeated. When the next identified prime exceeds the square root of the upper limit, all the remaining numbers in the list are prime.
-
-_
