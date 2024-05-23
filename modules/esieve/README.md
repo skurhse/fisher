@@ -2,9 +2,9 @@
 
 *Sift the Two's and Sift the Three's*
 
-*The Sieve of Eratosthenes.*
+*The Sieve of Eratosthenes*
 
-*When the multiples sublime,*
+*When the multiples sublime*
 
 *The numbers that remain are Prime*
 
