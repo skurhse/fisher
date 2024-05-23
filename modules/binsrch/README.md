@@ -1,4 +1,4 @@
-# Binary Search With Common Attributes
+# Binary Search on Common Attributes
 
 Also known as half-interval search or logarithmic search, *binary search* is an algorithm that finds the position of a target value within a sorted array.
 
