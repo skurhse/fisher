@@ -2,7 +2,7 @@
 
 Also known as half-interval search or logarithmic search, *binary search* is an algorithm that finds the position of a target value within a sorted array.
 
-Binary search leverages the sorted nature of candidate data by repeatedly bifurcating the search interval until the target is found or the interval is empty.
+Binary search leverages the sorted nature of candidate data by repeatedly bifurcating the search interval until the target is found or the interval becomes empty.
 
 Although the basic idea of binary search is straightforward, the details can be tricky. Variables used to represent indices can result in an arithmetic overflow against large arrays. Additionally, if there are repeat elements, two binary searches must be completed, one each for the lower and upper bound of the element range.
 
