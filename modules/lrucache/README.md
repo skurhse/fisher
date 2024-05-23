@@ -1,5 +1,8 @@
 # Least Recently Used (LRU) Cache
 
+
+### Problem Description
+
 In computing, a *cache* is a component that stores data so that future requests for that data can be served faster.
 
 A *cache hit* occurs when the requested data can be found in a cache, while a *cache miss* occurs when it cannot.  The *hit ratio* of a cache describes how often a searched-for item is actually available.
