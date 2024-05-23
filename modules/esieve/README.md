@@ -8,6 +8,8 @@
 
 *The numbers that remain are Prime*
 
+### Problem Description
+
 In mathematics, the sieve of Eratosthenes is an ancient algorithm for finding prime numbers. Its invention is attributed to Eratosthenes of Cyrene, a 3rd century BCE Greek mathematician.
 
 The algorithm works to calculate primes by iteratively marking as composite (i.e., not prime) the multiples of each prime, starting with the first prime number, When the next identified prime exceeds the square root of the upper limit, all the remaining numbers in the list are prime.
