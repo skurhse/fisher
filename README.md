@@ -3,7 +3,7 @@
 
 ### Table of Contents
 
-- [Binary Search with Common Attributes](modules/binsrch/)
+- [Binary Search on Common Attributes](modules/binsrch/)
 - [Sieve of Eratosthenes](modules/esieve/)
 - [Fibonacci Sequence](modules/fibnum/)
 - [Least Recently Used (LRU) Cache Replacement](modules/lrucache/)
