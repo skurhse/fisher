@@ -1,31 +1,30 @@
 package binsrch
 
-func Search(nums []int, target int) int {
-	return searchWindow(0, len(nums), nums, target)
+func Search(numbers []int, target int) int {
+	return searchWindow(0, len(numbers), numbers, target)
 }
 
-func searchWindow(l int, u int, nums []int, target int) int {
-	window := nums[l:u]
-
+func searchWindow(lower int, upper int, numbers []int, target int) int {
+	window := numbers[lower:upper]
 	size := len(window)
 
 	if size == 1 {
 		if window[0] == target {
-			return l
+			return lower
 		} else {
 			return -1
 		}
 	}
 
-	j := size / 2
-	e := window[j]
+	middle := size / 2
+	element := window[middle]
 
 	switch {
-	case e == target:
-		return l + j
-	case e < target:
-		return searchWindow(l+j, u, nums, target)
+	case element == target:
+		return lower + middle
+	case element < target:
+		return searchWindow(lower+middle, upper, numbers, target)
 	default:
-		return searchWindow(l, u-j, nums, target)
+		return searchWindow(lower, upper-middle, numbers, target)
 	}
 }
