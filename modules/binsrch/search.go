@@ -1,32 +1,31 @@
 package binsrch
 
 func Search(nums []int, target int) int {
-	var find func(int, int) int
-	find = func(l int, u int) int {
+	return searchWindow(0, len(nums), nums, target)
+}
 
-		window := nums[l:u]
-		size := len(window)
+func searchWindow(l int, u int, nums []int, target int) int {
+	window := nums[l:u]
 
-		if size == 1 {
-			if window[0] == target {
-				return l
-			} else {
-				return -1
-			}
-		}
+	size := len(window)
 
-		j := size / 2
-		e := window[j]
-
-		switch {
-		case e == target:
-			return l + j
-		case e < target:
-			return find(l+j, u)
-		default:
-			return find(l, u-j)
+	if size == 1 {
+		if window[0] == target {
+			return l
+		} else {
+			return -1
 		}
 	}
 
-	return find(0, len(nums))
+	j := size / 2
+	e := window[j]
+
+	switch {
+	case e == target:
+		return l + j
+	case e < target:
+		return searchWindow(l+j, u, nums, target)
+	default:
+		return searchWindow(l, u-j, nums, target)
+	}
 }

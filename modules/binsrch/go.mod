@@ -1,3 +1,3 @@
-module github.com/skurhse/gresto/binsrch
+module github.com/skurhse/fisher/modules/binsrch
 
 go 1.22.3
