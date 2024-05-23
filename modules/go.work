@@ -1,11 +1,11 @@
 go 1.22.3
 
 use (
-	modules/cnbcache
-	modules/binsrch
-	modules/esieve
-	modules/fibnum
-	modules/lrucache
-	modules/lstrev
-	modules/mndlbrot
+	cnbcache
+	binsrch
+	esieve
+	fibnum
+	lrucache
+	lstrev
+	mndlbrot
 )
