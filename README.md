@@ -3,13 +3,13 @@
 
 ### Table of Contents
 
-- [Binary Search](src/binsrch/)
-- [Sieve of Eratosthenes](src/esieve/)
-- [Fibonacci Sequence](src/fibnum/)
-- [Least Recently Used (LRU) Cache](src/lrucache/)
-- [Concurrent Non-Blocking Cache](src/cnbcache)
-- [Reverse Linked List](src/lstrev/)
-- [Mandelbrot Set](src/mndlbrot/)
+- [Binary Search](modules/binsrch/)
+- [Sieve of Eratosthenes](modules/esieve/)
+- [Fibonacci Sequence](modules/fibnum/)
+- [Least Recently Used (LRU) Cache](modules/lrucache/)
+- [Concurrent Non-Blocking Cache](modules/cnbcache)
+- [Reverse Linked List](modules/lstrev/)
+- [Mandelbrot Set](modules/mndlbrot/)
 
 ### Official Language Resources
 - [Documentation](https://go.dev/doc/)
