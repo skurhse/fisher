@@ -6,7 +6,7 @@
 - [Binary Search](modules/binsrch/)
 - [Sieve of Eratosthenes](modules/esieve/)
 - [Fibonacci Sequence](modules/fibnum/)
-- [Least Recently Used (LRU) Cache](modules/lrucache/)
+- [Least Recently Used (LRU) Cache Replacement](modules/lrucache/)
 - [Concurrent Non-Blocking Cache](modules/cnbcache)
 - [Reverse Linked List](modules/lstrev/)
 - [Mandelbrot Set](modules/mndlbrot/)
