@@ -3,7 +3,7 @@
 
 ### Table of Contents
 
-- [Binary Search](modules/binsrch/)
+- [Binary Search With Duplicates](modules/binsrch/)
 - [Sieve of Eratosthenes](modules/esieve/)
 - [Fibonacci Sequence](modules/fibnum/)
 - [Least Recently Used (LRU) Cache Replacement](modules/lrucache/)
