@@ -7,7 +7,7 @@ type Point struct {
 	Y int
 }
 
-func RecursiveSearch(points []Point, abscissa int) (int, int, error) {
+func Search(points []Point, abscissa int) (int, int, error) {
 	if len(points) == 0 {
 		return 0, 0, errors.New("points empty")
 	}

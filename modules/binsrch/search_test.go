@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestRecursiveSearch(t *testing.T) {
+func TestSearch(t *testing.T) {
 	tests := []struct {
 		points   []Point
 		abscissa int
@@ -64,9 +64,9 @@ func TestRecursiveSearch(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		lower, upper, err := RecursiveSearch(tt.points, tt.abscissa)
+		lower, upper, err := Search(tt.points, tt.abscissa)
 		if lower != tt.lower || upper != tt.upper || (err != nil && err.Error() != tt.err.Error()) {
-			t.Errorf("RecursiveSearch(%v, %d) = (%d, %d, %v), want (%d, %d, %v)",
+			t.Errorf("Search(%v, %d) = (%d, %d, %v), want (%d, %d, %v)",
 				tt.points, tt.abscissa, lower, upper, err, tt.lower, tt.upper, tt.err)
 		}
 	}
