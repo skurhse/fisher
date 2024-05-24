@@ -1,17 +1,73 @@
 package binsrch
 
 import (
-	"fmt"
+	"errors"
+	"testing"
 )
 
-func ExampleSearch_one() {
-	fmt.Println(Search([]int{-1, 0, 3, 5, 9, 12}, 9))
-	// Output:
-	// 4
-}
+func TestRecursiveSearch(t *testing.T) {
+	tests := []struct {
+		points   []Point
+		abscissa int
+		lower    int
+		upper    int
+		err      error
+	}{
+		// Basic case: abscissa present in the middle
+		{
+			points:   []Point{{1, 2}, {3, 4}, {5, 6}, {7, 8}, {9, 10}},
+			abscissa: 5,
+			lower:    2,
+			upper:    3,
+			err:      nil,
+		},
+		// Case: abscissa present at the start
+		{
+			points:   []Point{{1, 2}, {3, 4}, {5, 6}, {7, 8}, {9, 10}},
+			abscissa: 1,
+			lower:    0,
+			upper:    1,
+			err:      nil,
+		},
+		// Case: abscissa present at the end
+		{
+			points:   []Point{{1, 2}, {3, 4}, {5, 6}, {7, 8}, {9, 10}},
+			abscissa: 9,
+			lower:    4,
+			upper:    5,
+			err:      nil,
+		},
+		// Case: abscissa not present
+		{
+			points:   []Point{{1, 2}, {3, 4}, {5, 6}, {7, 8}, {9, 10}},
+			abscissa: 6,
+			lower:    0,
+			upper:    0,
+			err:      errors.New("not found"),
+		},
+		// Case: abscissa present multiple times
+		{
+			points:   []Point{{1, 2}, {3, 4}, {5, 6}, {5, 7}, {9, 10}},
+			abscissa: 5,
+			lower:    2,
+			upper:    4,
+			err:      nil,
+		},
+		// Case: empty points list
+		{
+			points:   []Point{},
+			abscissa: 1,
+			lower:    0,
+			upper:    0,
+			err:      errors.New("points empty"),
+		},
+	}
 
-func ExampleSearch_two() {
-	fmt.Println(Search([]int{-1, 0, 3, 5, 9, 12}, 2))
-	// Output:
-	// -1
+	for _, tt := range tests {
+		lower, upper, err := RecursiveSearch(tt.points, tt.abscissa)
+		if lower != tt.lower || upper != tt.upper || (err != nil && err.Error() != tt.err.Error()) {
+			t.Errorf("RecursiveSearch(%v, %d) = (%d, %d, %v), want (%d, %d, %v)",
+				tt.points, tt.abscissa, lower, upper, err, tt.lower, tt.upper, tt.err)
+		}
+	}
 }

@@ -8,6 +8,10 @@ type Point struct {
 }
 
 func RecursiveSearch(points []Point, abscissa int) (int, int, error) {
+	if len(points) == 0 {
+		return 0, 0, errors.New("points empty")
+	}
+
 	lower, err := findLower(0, len(points), points, abscissa)
 	if err != nil {
 		return 0, 0, err
@@ -66,8 +70,14 @@ func findUpper(lower int, upper int, points []Point, abscissa int) int {
 	x := point.X
 
 	if x == abscissa {
-		proceding := points[rightLower+1]
-		if proceding.X != abscissa {
+		if rightLower+1 < len(points) {
+			succeeding := points[rightLower+1]
+			if succeeding.X == abscissa {
+				return findUpper(rightLower, upper, points, abscissa)
+			} else {
+				return rightLower + 1
+			}
+		} else {
 			return rightLower + 1
 		}
 	}
