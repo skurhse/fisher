@@ -1,23 +1,27 @@
 # Binary Search on Common Attributes
 
-Also known as half-interval search or logarithmic search, *binary search* is an algorithm that finds the index of a target value within a sorted collection.
+Also known as logarithmic search, *binary search* is an algorithm that finds the index of a target value within a sorted collection.
 
-Binary search leverages the ordinal nature of candidate data by repeatedly bifurcating the search interval until the target is found or the interval becomes empty.
+Binary search leverages the ordinal nature of the sorted candidate data by repeatedly bifurcating the search interval until the target is found or the interval becomes empty (no result).
 
-Although the basic idea is straightforward, the details can be tricky:
-- Variables used to represent indices can result in an arithmetic overflow against large arrays.
-- If there are repeated elements, two modified binary searches must be completed, one each for the lower and upper subrange bound.
+Although the basic idea behind the algorithm is straightforward, the details can be tricky:
+- Variables used to represent indices can result in an arithmetic overflow against large collections.
+- If elements are repeated, two modified binary searches must be completed in order to capture the lower and upper bounds.
 
 ### Problem Statement
 
-Write two Go functions to perform binary searches against the x-coordinate in a sorted collection of ordered pairs:
+Write two functions to perform binary searches against the abscissa (x-coordinate) in a sorted collection of cartesian points:
 ```go
-RecursiveSearch(numbers []int, target int) int
+type Point struct {
+    X  int
+    Y int
+}
 
-InterativeSearch(numbers []int, target int) int
+func RecursiveSearch(points []Point, abscissa int) (int, int) {}
+func InterativeSearch(points []Point, abscissa int) (int, int) {}
 ```
 
-Benchmark them to compare performance.
+Return the half-open interval of the found subrange. Benchmark them to compare performance.
 
 ##### Notes
 - Coordinates may be either natural or negative whole numbers.
