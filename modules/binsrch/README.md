@@ -17,11 +17,10 @@ type Point struct {
     Y int
 }
 
-func RecursiveSearch(points []Point, e int) (int, int) {}
-func InterativeSearch(points []Point, abscissa int) (int, int) {}
+func Search(points []Point, abscissa int) (int, int, error) {}
 ```
 
-Return the half-open interval of the found subrange. Benchmark them to compare performance.
+Return the half-open interval of the found subrange.
 
 ##### Notes
 - Coordinates may be either natural or negative whole numbers.
