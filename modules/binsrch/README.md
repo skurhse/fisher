@@ -1,8 +1,8 @@
 # Binary Search on Common Attributes
 
-Also known as half-interval search or logarithmic search, *binary search* is an algorithm that finds the position of a target value within a sorted array.
+Also known as half-interval search or logarithmic search, *binary search* is an algorithm that finds the index of a target value within a sorted collection.
 
-Binary search leverages the sorted nature of candidate data by repeatedly bifurcating the search interval until the target is found or the interval becomes empty.
+Binary search leverages the ordinal nature of candidate data by repeatedly bifurcating the search interval until the target is found or the interval becomes empty.
 
 Although the basic idea is straightforward, the details can be tricky:
 - Variables used to represent indices can result in an arithmetic overflow against large arrays.
@@ -10,14 +10,15 @@ Although the basic idea is straightforward, the details can be tricky:
 
 ### Problem Statement
 
-Write a function `Search` in Go to perform a binary search against the x-coordinate in an collection of ordered pairs.
+Write two Go functions to perform binary searches against the x-coordinate in a sorted collection of ordered pairs:
+```go
+RecursiveSearch(numbers []int, target int) int
 
-##### Input
-- `coords`: A slice of coordinate pairs, sorted in ascending x order, which may contain natural or negative integers.
-- `target`: A x-coordinate representing the value to search for.
+InterativeSearch(numbers []int, target int) int
+```
 
-##### Output
-- Return a slice containing all coordinate pair with an x-coordinate equal to `target`.
+Benchmark them to compare performance.
 
 ##### Notes
-- `coords` may have non-unique point values.
+- Coordinates may be either natural or negative whole numbers.
+- Ordered pairs with x-coordinate values.
