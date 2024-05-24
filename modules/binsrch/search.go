@@ -1,30 +1,80 @@
 package binsrch
 
-func Search(numbers []int, target int) int {
-	return searchWindow(0, len(numbers), numbers, target)
+import "errors"
+
+type Point struct {
+	X int
+	Y int
 }
 
-func searchWindow(lower int, upper int, numbers []int, target int) int {
-	window := numbers[lower:upper]
-	size := len(window)
+func RecursiveSearch(points []Point, abscissa int) (int, int, error) {
+	lower, err := findLower(0, len(points), points, abscissa)
+	if err != nil {
+		return 0, 0, err
+	}
+	upper := findUpper(0, len(points), points, abscissa)
+
+	return lower, upper, nil
+}
+
+func findLower(lower int, upper int, points []Point, abscissa int) (int, error) {
+	size := upper - lower
 
 	if size == 1 {
-		if window[0] == target {
-			return lower
+		if points[lower].X == abscissa {
+			return lower, nil
 		} else {
-			return -1
+			return 0, errors.New("not found")
 		}
 	}
 
 	middle := size / 2
-	element := window[middle]
 
-	switch {
-	case element == target:
-		return lower + middle
-	case element < target:
-		return searchWindow(lower+middle, upper, numbers, target)
-	default:
-		return searchWindow(lower, upper-middle, numbers, target)
+	rightLower := lower + middle
+	leftUpper := upper - middle
+
+	point := points[rightLower]
+	x := point.X
+
+	if x == abscissa {
+		preceding := points[rightLower-1]
+		if preceding.X != abscissa {
+			return rightLower, nil
+		}
+	}
+
+	if x < abscissa {
+		return findLower(rightLower, upper, points, abscissa)
+	} else {
+		return findLower(lower, leftUpper, points, abscissa)
+	}
+}
+
+func findUpper(lower int, upper int, points []Point, abscissa int) int {
+	size := upper - lower
+
+	if size == 1 {
+		return upper
+	}
+
+	middle := size / 2
+
+	rightLower := lower + middle
+	leftUpper := upper - middle
+
+	point := points[rightLower]
+	x := point.X
+
+	if x == abscissa {
+		proceding := points[rightLower+1]
+		if proceding.X != abscissa {
+			return rightLower + 1
+		}
+	}
+
+	if x < abscissa {
+		return findUpper(rightLower, upper, points, abscissa)
+	} else {
+		return findUpper(lower, leftUpper, points, abscissa)
 	}
 }
