@@ -13,11 +13,11 @@ Although the basic idea behind the algorithm is straightforward, the details can
 Write two functions to perform binary searches against the abscissa (x-coordinate) in a sorted collection of cartesian points:
 ```go
 type Point struct {
-    X  int
+    X int
     Y int
 }
 
-func RecursiveSearch(points []Point, abscissa int) (int, int) {}
+func RecursiveSearch(points []Point, e int) (int, int) {}
 func InterativeSearch(points []Point, abscissa int) (int, int) {}
 ```
 
