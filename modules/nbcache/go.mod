@@ -1,3 +1,3 @@
-module github.com/skurhse/fisher/modules/nbcache
+module github.com/skurhse/fisher/modules/hgcache
 
-go 1.22.3
+go 1.22.4
