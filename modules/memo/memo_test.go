@@ -1,4 +1,4 @@
-package hgcache
+package memo
 
 import (
 	"fmt"
@@ -11,17 +11,17 @@ import (
 )
 
 func TestSequential(t *testing.T) {
-	cache := New(httpGetBody)
-	defer cache.Close()
+	memo := New(httpGetBody)
+	defer memo.Close()
 
-	Sequential(t, cache)
+	testSequential(t, memo)
 }
 
 func TestConcurrent(t *testing.T) {
-	cache := New(httpGetBody)
-	defer cache.Close()
+	memo := New(httpGetBody)
+	defer memo.Close()
 
-	Concurrent(t, cache)
+	testConcurrent(t, memo)
 }
 
 func httpGetBody(url string) (interface{}, error) {
@@ -34,7 +34,7 @@ func httpGetBody(url string) (interface{}, error) {
 	return ioutil.ReadAll(resp.Body)
 }
 
-func incomingURLs() <-chan string {
+func httpGetURLs() <-chan string {
 	ch := make(chan string)
 	go func() {
 		for _, url := range []string{
@@ -59,36 +59,40 @@ type M interface {
 	Get(url string) (interface{}, error)
 }
 
-func Sequential(t *testing.T, m M) {
-	for url := range incomingURLs() {
-		start := time.Now()
+func testSequential(t *testing.T, m M) {
+	for url := range httpGetURLs() {
 
-		value, err := m.Get(url)
+		val, err := m.Get(url)
 
 		if err != nil {
 			log.Print(err)
 			continue
 		}
-		fmt.Printf("%s, %s, %d bytes\n",
-			url, time.Since(start), len(value.([]byte)))
+		fmt.Printf("%s %d bytes\n", url, len(val.([]byte)))
 	}
 }
 
-func Concurrent(t *testing.T, m M) {
+func testConcurrent(t *testing.T, m M) {
 	var n sync.WaitGroup
-	for url := range incomingURLs() {
+
+	for url := range httpGetURLs() {
 		n.Add(1)
+
 		go func(url string) {
 			defer n.Done()
+
 			start := time.Now()
 			value, err := m.Get(url)
+
 			if err != nil {
 				log.Print(err)
 				return
 			}
+
 			fmt.Printf("%s, %s, %d bytes\n",
 				url, time.Since(start), len(value.([]byte)))
 		}(url)
 	}
+
 	n.Wait()
 }
