@@ -1,59 +1,76 @@
-package cnbcache
+package hgcache
 
-type Func func(key string) (interface{}, error)
+// Package hgcache provides a concurrency-safe
+// memoization of a function of type HTTPGetFunction.
 
-type result struct {
-	value interface{}
-	err   error
+type HTTPGetCache struct {
+	requests chan httpGetRequest
 }
 
-type entry struct {
-	res   result
-	ready chan struct{}
+type HTTPGetFunction func(url string) (interface{}, error)
+
+type httpGetRequest struct {
+	url      string
+	response chan<- httpGetResult
 }
 
-type request struct {
-	key      string
-	response chan<- result
+type httpGetResult struct {
+	val interface{}
+	err error
 }
 
-type Memo struct{ requests chan request }
-
-func New(f Func) *Memo {
-	memo := &Memo{requests: make(chan request)}
-	go memo.server(f)
-	return memo
+type httpGetEntry struct {
+	result httpGetResult
+	ready  chan struct{}
 }
 
-func (memo *Memo) Get(key string) (interface{}, error) {
-	response := make(chan result)
-	memo.requests <- request{key, response}
-	res := <-response
-	return res.value, res.err
+func New(getFunction HTTPGetFunction) *HTTPGetCache {
+	cache := &HTTPGetCache{
+		requests: make(chan httpGetRequest),
+	}
+
+	go cache.serve(getFunction)
+
+	return cache
 }
 
-func (memo *Memo) Close() { close(memo.requests) }
+func (getCache *HTTPGetCache) Get(url string) (interface{}, error) {
+	getResponse := make(chan httpGetResult)
 
-func (memo *Memo) server(f Func) {
-	cache := make(map[string]*entry)
-	for req := range memo.requests {
-		e := cache[req.key]
-		if e == nil {
-			// This is the first request for this key.
-			e = &entry{ready: make(chan struct{})}
-			cache[req.key] = e
-			go e.call(f, req.key) // call f(key)
+	getCache.requests <- httpGetRequest{url, getResponse}
+
+	response := <-getResponse
+
+	return response.val, response.err
+}
+
+func (getCache *HTTPGetCache) Close() {
+	close(getCache.requests)
+}
+
+func (getCache *HTTPGetCache) serve(getFunction HTTPGetFunction) {
+	cache := make(map[string]*httpGetEntry)
+
+	for request := range getCache.requests {
+		entry := cache[request.url]
+
+		if entry == nil {
+			entry = &httpGetEntry{ready: make(chan struct{})}
+			cache[request.url] = entry
+
+			go entry.call(getFunction, request.url)
 		}
-		go e.deliver(req.response)
+
+		go entry.deliver(request.response)
 	}
 }
 
-func (e *entry) call(f Func, key string) {
-	e.res.value, e.res.err = f(key)
-	close(e.ready)
+func (getEntry *httpGetEntry) call(getFunction HTTPGetFunction, url string) {
+	getEntry.result.val, getEntry.result.err = getFunction(url)
+	close(getEntry.ready)
 }
 
-func (e *entry) deliver(response chan<- result) {
-	<-e.ready
-	response <- e.res
+func (getEntry *httpGetEntry) deliver(result chan<- httpGetResult) {
+	<-getEntry.ready
+	result <- getEntry.result
 }

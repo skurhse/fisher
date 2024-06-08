@@ -1,4 +1,4 @@
-package cnbcache
+package hgcache
 
 import (
 	"fmt"
@@ -10,15 +10,17 @@ import (
 	"time"
 )
 
-func Test(t *testing.T) {
-	m := New(httpGetBody)
-	defer m.Close()
+func TestSequential(t *testing.T) {
+	cache := New(httpGetBody)
+	defer cache.Close()
+
 	Sequential(t, m)
 }
 
 func TestConcurrent(t *testing.T) {
-	m := New(httpGetBody)
-	defer m.Close()
+	cache := New(httpGetBody)
+	defer cache.Close()
+
 	Concurrent(t, m)
 }
 
@@ -28,6 +30,7 @@ func httpGetBody(url string) (interface{}, error) {
 		return nil, err
 	}
 	defer resp.Body.Close()
+
 	return ioutil.ReadAll(resp.Body)
 }
 
@@ -38,28 +41,30 @@ func incomingURLs() <-chan string {
 			"https://golang.org",
 			"https://godoc.org",
 			"https://play.golang.org",
-			"http://gopl.io",
+			"https://go.dev",
 			"https://golang.org",
 			"https://godoc.org",
 			"https://play.golang.org",
-			"http://gopl.io",
+			"https://go.dev",
 		} {
 			ch <- url
 		}
 		close(ch)
 	}()
+
 	return ch
 }
 
 type M interface {
-	Get(key string) (interface{}, error)
+	Get(url string) (interface{}, error)
 }
 
 func Sequential(t *testing.T, m M) {
-	//!+seq
 	for url := range incomingURLs() {
 		start := time.Now()
+
 		value, err := m.Get(url)
+
 		if err != nil {
 			log.Print(err)
 			continue
