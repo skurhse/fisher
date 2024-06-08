@@ -11,7 +11,9 @@
 - [Reverse Linked List](modules/lstrev/)
 - [Mandelbrot Set](modules/mndlbrot/)
 
-### Official Resources
+### Addendum
+
+#### Official Resources
 - [Documentation](https://go.dev/doc/)
 - [Source Code](https://github.com/golang/go#the-go-programming-language)
 - [Blog](https://go.dev/blog/)
@@ -19,7 +21,7 @@
 - [How to Write Go Code](https://go.dev/doc/code)
 - [Effective Go](https://go.dev/doc/effective_go)
 
-### Community Resources
+#### Community Resources
 - [Go Proverbs](https://go-proverbs.github.io/)
 - [Go by Example](https://gobyexample.com/)
 - [Go Track (Exercism)](https://exercism.org/tracks/go)
