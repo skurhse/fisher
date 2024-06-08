@@ -27,9 +27,8 @@ func findLower(lower int, upper int, points []Point, abscissa int) (int, error) 
 	if size == 1 {
 		if points[lower].X == abscissa {
 			return lower, nil
-		} else {
-			return 0, errors.New("not found")
 		}
+		return 0, errors.New("not found")
 	}
 
 	middle := size / 2
@@ -49,9 +48,8 @@ func findLower(lower int, upper int, points []Point, abscissa int) (int, error) 
 
 	if x < abscissa {
 		return findLower(rightLower, upper, points, abscissa)
-	} else {
-		return findLower(lower, leftUpper, points, abscissa)
 	}
+	return findLower(lower, leftUpper, points, abscissa)
 }
 
 func findUpper(lower int, upper int, points []Point, abscissa int) int {
@@ -74,17 +72,14 @@ func findUpper(lower int, upper int, points []Point, abscissa int) int {
 			succeeding := points[rightLower+1]
 			if succeeding.X == abscissa {
 				return findUpper(rightLower, upper, points, abscissa)
-			} else {
-				return rightLower + 1
 			}
-		} else {
 			return rightLower + 1
 		}
+		return rightLower + 1
 	}
 
 	if x < abscissa {
 		return findUpper(rightLower, upper, points, abscissa)
-	} else {
-		return findUpper(lower, leftUpper, points, abscissa)
 	}
+	return findUpper(lower, leftUpper, points, abscissa)
 }
