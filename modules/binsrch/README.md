@@ -7,6 +7,7 @@ Binary search leverages the ordinal nature of the sorted candidate data by repea
 Although the basic idea behind the algorithm is straightforward, the details can be tricky:
 - Variables used to represent indices can result in an arithmetic overflow against large collections.
 - If elements are repeated, two modified binary searches must be completed in order to capture the lower and upper bounds.
+- A recursive solution will be slower than an iterative solution unless tail-call optimization is implemented correctly.
 
 ### Problem Statement
 
