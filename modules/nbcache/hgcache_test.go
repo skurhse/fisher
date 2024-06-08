@@ -14,14 +14,14 @@ func TestSequential(t *testing.T) {
 	cache := New(httpGetBody)
 	defer cache.Close()
 
-	Sequential(t, m)
+	Sequential(t, cache)
 }
 
 func TestConcurrent(t *testing.T) {
 	cache := New(httpGetBody)
 	defer cache.Close()
 
-	Concurrent(t, m)
+	Concurrent(t, cache)
 }
 
 func httpGetBody(url string) (interface{}, error) {
