@@ -7,7 +7,7 @@
 - [Sieve of Eratosthenes](modules/esieve/)
 - [Fibonacci Sequence](modules/fibnum/)
 - [Least Recently Used (LRU) Cache Replacement](modules/lrucache/)
-- [Non-Blocking Cache](modules/nbcache)
+- [Concurrency-safe Memoizer](modules/memo)
 - [Reverse Linked List](modules/lstrev/)
 - [Mandelbrot Set](modules/mndlbrot/)
 
