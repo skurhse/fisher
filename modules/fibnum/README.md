@@ -6,7 +6,7 @@ In mathematics, the "Fibonacci sequence" is a numeric sequence in which each ele
 
 The sequence commonly starts from 0 and 1, although some authors start the sequence from 1 and 1, or from 1 and 2, as did Fibonacci. 
 
-The Fibonacci numbers were first described in Indian mathematics as early as 200 BC in work by Sanskrit poet and mathmetician [Acharya Pingala](https://en.wikipedia.org/wiki/Pingala) on enumerating possible patterns of poetry.
+The Fibonacci numbers were first described in Indian mathematics as early as 200 BC in work by poet and mathmetician [Acharya Pingala](https://en.wikipedia.org/wiki/Pingala) on enumerating patterns of Sanskrit poetry.
 
 ![Pingala](https://github.com/skurhse/fisher/assets/8763488/165a72ce-aaba-4503-9cfb-9315ed49cdf4)
 
