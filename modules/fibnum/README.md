@@ -10,7 +10,7 @@ The Fibonacci numbers were first described in Indian mathematics as early as 200
 
 ![Pingala](https://github.com/skurhse/fisher/assets/8763488/165a72ce-aaba-4503-9cfb-9315ed49cdf4)
 
-Pingala was a scholar in the Maurya Empire, was a geographically extensive Iron Age historical power in South Asia. Pingala is sometimes credited with the first use of the number zero, as he used the Sanskrit word *śūnya* to explicitly refer to the number.
+Pingala was a scholar in the Maurya Empire, a geographically extensive Iron Age historical power in South Asia. Pingala is sometimes accredited with the first use of the number zero, as he used the Sanskrit word *śūnya* to explicitly refer to the number.
 
 The Fibonacci numbers are named after the Italian mathematician Leonardo of Pisa, also known as [Fibonacci](https://en.wikipedia.org/wiki/Fibonacci).
 
