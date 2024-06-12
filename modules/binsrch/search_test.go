@@ -71,3 +71,41 @@ func TestSearch(t *testing.T) {
 		}
 	}
 }
+
+func BenchmarkSearch(b *testing.B) {
+	testCases := []struct {
+		name     string
+		points   []Point
+		abscissa int
+	}{
+		{
+			name:     "Small",
+			points:   generatePoints(1e6),
+			abscissa: 5e5,
+		},
+		{
+			name:     "Large",
+			points:   generatePoints(1e9),
+			abscissa: 5e8,
+		},
+	}
+
+	for _, tc := range testCases {
+		b.Run(tc.name, func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				_, _, err := Search(tc.points, tc.abscissa)
+				if err != nil && err.Error() != "not found" {
+					b.Fatalf("unexpected error: %v", err)
+				}
+			}
+		})
+	}
+}
+
+func generatePoints(n int) []Point {
+	points := make([]Point, n)
+	for i := 0; i < n; i++ {
+		points[i] = Point{X: i, Y: i}
+	}
+	return points
+}
