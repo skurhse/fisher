@@ -8,6 +8,6 @@ The sequence commonly starts from 0 and 1, although some authors start the seque
 
 The Fibonacci numbers were first described in Indian mathematics as early as 200 BC in work by Sanskrit poet and mathmetician [Acharya Pingala](https://en.wikipedia.org/wiki/Pingala) on enumerating possible patterns of poetry.
 
-The Fibonacci numbers are named after the Italian mathematician Leonardo of Pisa, also known as [Fibonacci](https://en.wikipedia.org/wiki/Fibonacci)/.
+The Fibonacci numbers are named after the Italian mathematician Leonardo of Pisa, also known as [Fibonacci](https://en.wikipedia.org/wiki/Fibonacci).
 
 Leonardo introduced the sequence to Western European mathematics in his 1202 book [Liber Abaci](https://en.wikipedia.org/wiki/Liber_Abaci).
