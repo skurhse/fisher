@@ -15,3 +15,5 @@ Pingala was a scholar in the Maurya Empire, a geographically extensive Iron Age 
 The Fibonacci numbers are named after the Italian mathematician Leonardo of Pisa, also known as [Fibonacci](https://en.wikipedia.org/wiki/Fibonacci).
 
 Leonardo introduced the sequence to Western European mathematics in his 1202 book [Liber Abaci](https://en.wikipedia.org/wiki/Liber_Abaci).
+
+![50S -Leonardo-Fibonacci-1170-1250-594x594](https://github.com/skurhse/fisher/assets/8763488/52a92d9d-a11d-4eee-ad06-8e65aa48a6d8)
