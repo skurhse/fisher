@@ -6,4 +6,6 @@ In mathematics, the "Fibonacci sequence" is a numeric sequence in which each ele
 
 The sequence commonly starts from 0 and 1, although some authors start the sequence from 1 and 1, or from 1 and 2, as did Fibonacci. 
 
-The Fibonacci numbers were first described in Indian mathematics as early as 200 BC in work by Pingala on enumerating possible patterns of Sanskrit poetry formed from syllables of two lengths.[2][3][4] They are named after the Italian mathematician Leonardo of Pisa, also known as Fibonacci, who introduced the sequence to Western European mathematics in his 1202 book Liber Abaci.[5]
+The Fibonacci numbers were first described in Indian mathematics as early as 200 BC in work by Pingala on enumerating possible patterns of Sanskrit poetry formed from syllables of two lengths.
+
+The Fibonacci numbers are named after the Italian mathematician Leonardo of Pisa, also known as Fibonacci, who introduced the sequence to Western European mathematics in his 1202 book Liber Abaci.
