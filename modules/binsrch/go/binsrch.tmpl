@@ -21,79 +21,69 @@ func (points Points[C]) Where{{.Name}}(target C) (Points[C], bool) {
     return nil, false
   }
 
+  var lower int
+  var upper int
   {{range $.Bounds}}
-  ch{{.Name}} := make(chan int)
+  lower = 0
+  upper = size - 1
+  var val{{.Name}} int
+  for {
+    windowSize := (upper - lower) + 1
 
-  go func() {
-    ch{{.Name}} <- points.Find{{.Name}}{{$coord.Name}}(target, 0, size-1)
-  }()
+    if windowSize == 1 {
+      {{if .IsLower}}
+      last := points[lower].{{$coord.Name}}
 
-  val{{.Name}} := <- ch{{.Name}}
-  close(ch{{.Name}})
+      if last == target {
+        val{{.Name}} = lower
+	break
+      }
 
+      val{{.Name}} = -1
+      {{else}}
+      val{{.Name}} = lower
+      {{end}}
+      break
+    }
+
+    jump := lower + windowSize/2
+
+    test := points[jump].{{$coord.Name}}
+
+    if test == target {
+      look := jump + {{.Polarity}}
+
+      if look < 0 || look == len(points) {
+        val{{.Name}} = jump
+	break
+      }
+
+      if points[look].{{$coord.Name}} != target {
+        val{{.Name}} = jump
+	break
+      }
+
+      {{if .IsLower}}
+      upper = jump + {{.Polarity}}
+      {{else}}
+      lower = jump + {{.Polarity}}
+      {{end}}
+    }
+
+    if test > target {
+      upper = jump - 1
+    } else {
+      lower = jump + 1
+    }
+  }
+
+  {{if .IsLower}}
   if val{{.Name}} == -1 {
     return nil, false
   }
-
   {{end}}
+  {{end}}
+
   return points[val{{$.Lower.Name}} : val{{$.Upper.Name}} + 1], true
 }
-{{end}}
-
-{{range .Coords}}
-{{ $coord := . }}
-{{range $.Bounds}}
-func (points Points[C]) Find{{.Name}}{{$coord.Name}}(target C, lower, upper int) int {
-  windowSize := (upper - lower) + 1
-
-  if windowSize == 1 {
-
-  last := points[lower].{{$coord.Name}}
-
-    if last == target {
-      return lower
-    }
-
-    return -1
-  }
-
-  jump := lower + windowSize/2
-
-  test := points[jump].{{$coord.Name}}
-
-  var l, u int
-  if test == target {
-    look := jump + {{.Polarity}}
-
-    if look < 0 || look == len(points) {
-      return jump
-    }
-
-    if points[look].{{$coord.Name}} != target {
-      return jump
-    }
-
-    {{if .IsLower}}
-    l = lower
-    u = jump + {{.Polarity}}
-    {{else}}
-    l = jump + {{.Polarity}}
-    u = upper
-    {{end}}
-  }
-
-  if test > target {
-
-    l = lower
-    u = jump - 1
-
-  } else {
-
-    l = jump + 1
-    u = upper
-  }
-
-  return points.Find{{.Name}}{{$coord.Name}}(target, l, u)
-}
-{{end}}
 {{end}}

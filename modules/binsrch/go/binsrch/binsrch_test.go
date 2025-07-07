@@ -2,6 +2,8 @@ package binsrch
 
 import (
 	"testing"
+	"math/rand"
+	"time"
 )
 
 func TestSearch(t *testing.T) {
@@ -89,6 +91,8 @@ func TestSearch(t *testing.T) {
 }
 
 func BenchmarkSearch(b *testing.B) {
+	rand.Seed(time.Now().UnixNano())
+
 	testCases := []struct {
 		name     string
 		points   Points[int]
@@ -96,13 +100,13 @@ func BenchmarkSearch(b *testing.B) {
 	}{
 		{
 			name:     "Small",
-			points:   GeneratePoints[int](1e3),
-			abscissa: 5e2,
+			points:   GeneratePoints[int](1e6),
+			abscissa: rand.Intn(1e6),
 		},
 		{
 			name:     "Large",
-			points:   GeneratePoints[int](1e5),
-			abscissa: 5e4,
+			points:   GeneratePoints[int](1e9),
+			abscissa: rand.Intn(1e9),
 		},
 	}
 
