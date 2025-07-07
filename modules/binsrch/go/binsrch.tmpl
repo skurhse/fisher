@@ -1,0 +1,89 @@
+package binsrch
+
+type Coordinate interface {
+	~int | ~int8 | ~int32 | ~int64
+}
+
+type Point[C Coordinate] struct {
+	{{range .Coords}}
+	{{.Name}} C
+	{{end}}
+}
+
+type Points[C Coordinate] []Point[C]
+
+{{range .Coords}}
+{{ $coord := . }} 
+func (points Points[C]) Where{{.Name}}(target C) (Points[C], bool) {
+  size := len(points)
+
+  if size == 0 {
+    return nil, false
+  }
+
+  var lower int
+  var upper int
+  {{range $.Bounds}}
+  lower = 0
+  upper = size - 1
+  var val{{.Name}} int
+  for {
+    windowSize := (upper - lower) + 1
+
+    if windowSize == 1 {
+      {{if .IsLower}}
+      last := points[lower].{{$coord.Name}}
+
+      if last == target {
+        val{{.Name}} = lower
+	break
+      }
+
+      val{{.Name}} = -1
+      {{else}}
+      val{{.Name}} = lower
+      {{end}}
+      break
+    }
+
+    jump := lower + windowSize/2
+
+    test := points[jump].{{$coord.Name}}
+
+    if test == target {
+      look := jump + {{.Polarity}}
+
+      if look < 0 || look == len(points) {
+        val{{.Name}} = jump
+	break
+      }
+
+      if points[look].{{$coord.Name}} != target {
+        val{{.Name}} = jump
+	break
+      }
+
+      {{if .IsLower}}
+      upper = jump + {{.Polarity}}
+      {{else}}
+      lower = jump + {{.Polarity}}
+      {{end}}
+    }
+
+    if test > target {
+      upper = jump - 1
+    } else {
+      lower = jump + 1
+    }
+  }
+
+  {{if .IsLower}}
+  if val{{.Name}} == -1 {
+    return nil, false
+  }
+  {{end}}
+  {{end}}
+
+  return points[val{{$.Lower.Name}} : val{{$.Upper.Name}} + 1], true
+}
+{{end}}
