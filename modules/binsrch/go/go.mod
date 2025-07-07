@@ -1,3 +1,3 @@
-module github.com/skurhse/fisher/modules/binsrch
+module github.com/skurhse/fisher/modules/binsrch/go
 
 go 1.22.3
