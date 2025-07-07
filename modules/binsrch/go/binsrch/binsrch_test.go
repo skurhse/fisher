@@ -95,25 +95,34 @@ func BenchmarkSearch(b *testing.B) {
 
 	testCases := []struct {
 		name     string
+		m int
+		n int
 		points   Points[int]
 		abscissa int
+		targets []int
 	}{
 		{
 			name:     "Small",
+			m:  1e6,
+			n: 1e3,
 			points:   GeneratePoints[int](1e6),
-			abscissa: rand.Intn(1e6),
+			targets:  GenerateTargets[int](1e6, 1e3),
 		},
 		{
 			name:     "Large",
+			m: 1e9,
+			n: 1e3,
 			points:   GeneratePoints[int](1e9),
-			abscissa: rand.Intn(1e9),
+			targets:  GenerateTargets[int](1e9, 1e3),
 		},
 	}
 
+	b.ResetTimer()
+	
 	for _, tc := range testCases {
 		b.Run(tc.name, func(b *testing.B) {
 			for i := 0; i < b.N; i++ {
-				tc.points.WhereX(tc.abscissa)
+				tc.points.WhereX(tc.targets[i%tc.n])
 			}
 		})
 	}
@@ -125,4 +134,14 @@ func GeneratePoints[C Coordinate](n int) Points[C] {
 		points[i] = Point[C]{C(i), C(i)}
 	}
 	return points
+}
+
+func GenerateTargets[C Coordinate](m, n int) []C {
+	targets := make([]C, n)
+
+	for i := 0; i < n; i++ {
+		targets[i] = C(rand.Intn(m))
+	}	
+
+	return targets
 }
