@@ -1,5 +1,6 @@
 # 🎣 fisher
- a go [chrestomathy](https://en.wiktionary.org/wiki/chrestomathy), designed for version [1.22](https://go.dev/dl/).
+ - a go [chrestomathy](https://en.wiktionary.org/wiki/chrestomathy) for [1.24](https://go.dev/dl/)
+ - a rust [miscellanea](https://en.wiktionary.org/wiki/miscellanea) for [1.88](https://forge.rust-lang.org/infra/other-installation-methods.html#standalone-installer)
 
 ### Table of Contents
 
