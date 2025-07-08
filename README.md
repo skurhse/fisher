@@ -6,7 +6,7 @@
 
 - [Binary Search on Common Attributes](modules/binsrch/)
 - [Sieve of Eratosthenes](modules/esieve/)
-- [Fibonacci Sequence](modules/fibseq/)
+- [Recursive Fibonacci Sequence](modules/fibseq/)
 - [Least Recently Used (LRU) Cache Replacement](modules/lrucache/)
 - [Concurrency-safe Memoizer](modules/memo)
 - [Reverse Linked List](modules/lstrev/)
