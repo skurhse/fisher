@@ -1,8 +1,8 @@
 package binsrch
 
 import (
-	"testing"
 	"math/rand"
+	"testing"
 	"time"
 )
 
@@ -90,39 +90,42 @@ func TestSearch(t *testing.T) {
 	}
 }
 
+type Case struct {
+	name     string
+	m        int
+	n        int
+	points   Points[int]
+	abscissa int
+	targets  []int
+}
+
 func BenchmarkSearch(b *testing.B) {
 	rand.Seed(time.Now().UnixNano())
 
-	testCases := []struct {
-		name     string
-		m int
-		n int
-		points   Points[int]
-		abscissa int
-		targets []int
-	}{
+	cases := [2]Case{
 		{
-			name:     "Small",
-			m:  1e6,
-			n: 1e3,
-			points:   GeneratePoints[int](1e6),
-			targets:  GenerateTargets[int](1e6, 1e3),
+			name:    "Small [1k]",
+			m:       1e3,
+			n:       1e2,
+			points:  GeneratePoints[int](1e3),
+			targets: GenerateTargets[int](1e3, 1e2),
 		},
 		{
-			name:     "Large",
-			m: 1e9,
-			n: 1e3,
-			points:   GeneratePoints[int](1e9),
-			targets:  GenerateTargets[int](1e9, 1e3),
+			name:    "Large [100k]",
+			m:       1e5,
+			n:       1e2,
+			points:  GeneratePoints[int](1e5),
+			targets: GenerateTargets[int](1e5, 1e2),
 		},
 	}
 
-	b.ResetTimer()
-	
-	for _, tc := range testCases {
-		b.Run(tc.name, func(b *testing.B) {
-			for i := 0; i < b.N; i++ {
-				tc.points.WhereX(tc.targets[i%tc.n])
+	for i, c := range cases {
+		b.Run(c.name, func(b *testing.B) {
+			for b.Loop() {
+				b.StopTimer()
+				t := c.targets[i%c.n]
+				b.StartTimer()
+				c.points.WhereX(t)
 			}
 		})
 	}
@@ -141,7 +144,7 @@ func GenerateTargets[C Coordinate](m, n int) []C {
 
 	for i := 0; i < n; i++ {
 		targets[i] = C(rand.Intn(m))
-	}	
+	}
 
 	return targets
 }

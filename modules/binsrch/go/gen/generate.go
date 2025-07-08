@@ -11,6 +11,7 @@ import (
 type Bound struct {
 	Name     string
 	IsLower  bool
+	IsUpper  bool
 	Index    int
 	Polarity int
 	Shift    int
@@ -40,6 +41,7 @@ var (
 	lower = Bound{
 		Name:     "Lower",
 		IsLower:  true,
+		IsUpper:  false,
 		Index:    -1,
 		Polarity: -1,
 		Shift:    0,
@@ -48,6 +50,7 @@ var (
 	upper = Bound{
 		Name:     "Upper",
 		IsLower:  false,
+		IsUpper:  true,
 		Index:    -1,
 		Polarity: 1,
 		Shift:    1,
@@ -62,12 +65,12 @@ var (
 )
 
 func main() {
-	template := template.Must(template.ParseFiles("binsrch.tmpl"))
+	template := template.Must(template.ParseFiles("../binsrch.tmpl"))
 
-	out, err := os.Create("binsrch/binsrch.go")
+	out, err := os.Create("../binsrch.go")
 
 	if err != nil {
-		panic("os-create failed")
+		log.Fatalf("%v", err)
 	}
 	defer out.Close()
 
