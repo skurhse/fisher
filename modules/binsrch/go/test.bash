@@ -12,5 +12,4 @@ cd "$dir"
 
 pushd "$dir/gen"; go generate; popd
 
-go test  -bench .
-go build .
+go test -bench=.
