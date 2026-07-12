@@ -1,5 +1,5 @@
 # 🎣 fisher
- - a go [chrestomathy](https://en.wiktionary.org/wiki/chrestomathy) for [1.24](https://go.dev/dl/)
+ - a [chrestomathy](https://en.wiktionary.org/wiki/chrestomathy) for [go 1.26](https://go.dev/dl/)
 
 ### Table of Contents
 
